@@ -1,0 +1,10 @@
+{% extends "upload_form/base.html" %}
+
+{% block title %}アップローダサンプル{% endblock title %}
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file">
+        <input type="submit" value="アップロード">
+    </form>
+{% endblock content %}
