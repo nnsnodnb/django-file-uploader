@@ -199,3 +199,5 @@ fabric.properties
 pyvenv.cfg
 .venv
 pip-selfcheck.json
+
+cover
