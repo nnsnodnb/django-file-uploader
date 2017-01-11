@@ -201,3 +201,5 @@ pyvenv.cfg
 pip-selfcheck.json
 
 cover
+upload_form/static/files/*
+!upload_form/static/files/__init__.py
