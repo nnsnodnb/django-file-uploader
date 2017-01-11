@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response, redirect
+from django.shortcuts import render_to_response, redirect, render
 from django.template.context_processors import csrf
 from django.conf import settings
 from upload_form.models import FileNameModel
@@ -9,7 +9,7 @@ def form(request):
     if request.method != 'POST':
         c = {}
         c.update(csrf(request))
-        return render_to_response('upload_form/form.html', c)
+        return render(request, 'upload_form/form.html')
 
     file = request.FILES['file']
     #path = os.path.join(settings.BASE_DIR, file.name)
@@ -25,4 +25,4 @@ def form(request):
     return redirect('upload_form:complete')
 
 def complete(request):
-    return render_to_response('upload_form/complete.html')
+    return render(request, 'upload_form/complete.html')
